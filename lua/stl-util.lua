@@ -71,11 +71,14 @@ M.get_mode_info = function()
   return modes[vim.fn.mode()]
 end
 
-M.add = function(s, hl)
+---apply highlight to a string
+---@param s string
+---@param hl string
+M.apply_hl = function(s, hl)
   if hl == nil then
     return s
   end
-  return "%#" .. hl .. "#" .. s .. "%*"
+  return "%#" .. hl .. "#" .. s
 end
 
 return M
